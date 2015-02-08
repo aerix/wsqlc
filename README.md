@@ -1,0 +1,2 @@
+# wsqlc
+Web SQL Console
