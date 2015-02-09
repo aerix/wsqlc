@@ -62,7 +62,7 @@ body
 	border: none;
 	font-family: monospace;
 	font-size: 12pt;
-	white-space: nowrap;
+	/* white-space: nowrap; */
 }
 #sql.separately
 {
