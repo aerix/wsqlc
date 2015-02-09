@@ -61,6 +61,8 @@ body
 	min-height: 30px;
 	border: none;
 	font-family: monospace;
+	font-size: 12pt;
+	white-space: nowrap;
 }
 #sql.separately
 {
