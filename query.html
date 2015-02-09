@@ -1,0 +1,52 @@
+<link href="css/query/all.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/query/small_height.css" rel="stylesheet" type="text/css" media="all AND (max-height: 300px)" /> 
+<link href="css/query/normal_height.css" rel="stylesheet" type="text/css" media="all AND (min-height: 301px)">
+<link href="css/query/small_width.css" rel="stylesheet" type="text/css" media="all AND (max-width: 500px)" />
+<link href="css/query/normal_width.css" rel="stylesheet" type="text/css" media="all AND (min-width: 501px)" />  
+
+<div id="menu">
+  <!--
+  <div id="icon" class="item">
+	<img src="img/icon.png" />
+  </div>
+  -->
+  <div id="title" class="item">
+	Web SQL Console
+  </div>
+  <div id="items" class="item">
+	<img src="img/items.jpeg"/>
+  </div>
+</div>
+<div ng-controller="query">
+  <form ng-submit="execute()">
+    <div id="buttons">
+      <input id="execute" type="image" src="img/execute.png" alt="submit" ng-hide="request.sql == '' || executing" />
+    </div>
+    <div id="workspace">
+	  <div id="error" ng-show="error.show">
+		{{error.message}}
+	  </div>
+      <textarea id="sql" ng-class="{full: response.data == undefined, separately: response.data != undefined}" ng-model="request.sql" ng-disabled="executing" placeholder="Enter SQL here"></textarea>
+	  <div id="results" ng-show="response.data != undefined">
+		<div class="content">
+          <ul class="header">
+            <li ng-repeat="name in response.header">
+              {{name}}
+            </li>
+          </ul>
+          <ul ng-repeat="row in response.data" >     
+            <li ng-repeat="name in response.header">
+              {{row[name]}}
+            </li>            
+          </ul>     
+		</div>
+		<a href="#">Save</a>
+      </div>
+    </div>
+  </form>
+  <div ng-show="executing" id="progress">
+	<div class="content">
+      <span class="message">Please, wait...</span>
+	</div>
+  </div>
+</div>

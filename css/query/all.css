@@ -1,0 +1,146 @@
+body
+{
+	margin: 0px;
+} 
+ 
+#menu
+{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  display: table;
+  background-color: Black;
+  color: White;
+  border-bottom: 2px solid DarkCyan;
+  box-shadow: 0px 1px 1px Silver;
+}
+#menu .item
+{
+  vertical-align: middle;
+  display: table-cell;
+}
+#icon
+{
+  padding-left: 5px;
+}
+#title
+{
+  text-align: left;
+  font-weight: bold;
+  padding-left: 10px;
+  width: 100%;
+}
+#items
+{
+  padding-right: 10px;
+  text-align: right;
+}
+
+#buttons
+{
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 2;
+}
+
+#workspace
+{
+	position: absolute; 
+	z-index: 1;
+	top: 54px;
+	bottom: 2px;
+}
+ 
+#sql
+{
+	width: 100%;
+	min-height: 30px;
+	border: none;
+}
+#sql.separately
+{
+  height: 70%;
+}
+#sql.full
+{
+  height: 100%;
+}
+
+#results
+{
+  margin-top: 5px; 
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: scroll;
+  border-radius: 3px;
+  background-color: White;
+}
+#results .content
+{
+    display: table;
+	width: 100%;
+	box-shadow: 1px 1px 1px rgba(220, 220, 220, 0.8);
+}
+#results .content ul.header
+{
+  font-weight: bold;
+}
+#results .content ul.header li
+{
+  background-color: #cfcfcf;
+}
+#results .content ul
+{
+    display: table-row;
+}
+#results .content li
+{
+    display: table-cell; 
+    border: 1px solid silver;
+    min-width: 10px;
+    padding: 5px;
+	font-size: 9pt;
+}
+#results a
+{
+  color: DarkCyan;
+  font-size: 10pt;
+}
+#progress
+{
+  position: absolute;
+  z-index: 3;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  
+  display: table;
+  width: 100%;
+  height: 100%;
+  
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#progress .content
+{
+  vertical-align: middle;
+  text-align: center;
+  display: table-cell;
+}
+#progress .message
+{
+  color: Green;
+}
+
+#error
+{
+  border: 2px solid Red;
+  color: DarkRed;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px Silver;
+}

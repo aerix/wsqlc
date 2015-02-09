@@ -1,0 +1,17 @@
+<link href="css/login/all.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/login/small_height.css" rel="stylesheet" type="text/css" media="all AND (max-height: 300px)" /> 
+<link href="css/login/normal_height.css" rel="stylesheet" type="text/css" media="all AND (min-height: 301px)">
+<link href="css/login/small_width.css" rel="stylesheet" type="text/css" media="all AND (max-width: 500px)" /> 
+<link href="css/login/normal_width.css" rel="stylesheet" type="text/css" media="all AND (min-width: 501px)" />  
+
+<div ng-controller="login" id="container">
+  <div id="content">
+    <form ng-submit="ok()">
+      <input type="text" placeholder="Login" ng-model="login" id="login" />
+      <input type="password" placeholder="Password" ng-model="password" id="password" />
+	  <input type="server" placeholder="Server" />
+	  <input type="database" placeholder="DataBase"/>
+      <input type="submit" value="Ok" ng-disabled="(login == '' || password == '')" />
+    </form>
+  </div>
+</div>
