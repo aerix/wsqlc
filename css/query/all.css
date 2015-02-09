@@ -111,10 +111,14 @@ body
     padding: 5px;
 	font-size: 9pt;
 }
-#results a
+#results .buttons
+{
+  padding: 5px;
+}
+#results .buttons a
 {
   color: DarkCyan;
-  font-size: 10pt;
+  font-size: 12pt;
 }
 #progress
 {
