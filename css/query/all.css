@@ -1,6 +1,7 @@
 body
 {
 	margin: 0px;
+	padding: 0px;
 	font-family: Verdana;
 	background: #F7F7F7;
 } 
@@ -58,7 +59,9 @@ body
 	position: absolute; 
 	z-index: 1;
 	top: 52px;
-	bottom: 2px;
+	bottom: 5px;
+	left: 3px;
+	right: 3px;
 }
  
 #sql
