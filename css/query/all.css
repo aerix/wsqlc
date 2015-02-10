@@ -64,6 +64,7 @@ body
 #sql
 {
 	width: 100%;
+	box-sizing: border-box;
 	min-height: 30px;
 	border: none;
 	font-family: monospace;
