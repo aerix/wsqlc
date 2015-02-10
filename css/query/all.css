@@ -167,3 +167,33 @@ body
   border-radius: 5px;
   box-shadow: 1px 1px 1px Silver;
 }
+
+#options
+{
+  position: absolute;
+  z-index: 2;
+  top: 45px;
+  right: 2px;
+  padding-top: 10px
+  padding-bottom: 10px;
+  background-color: #555555;
+  box-shadow: 1px 1px 1px Gray;
+  color: Silver;
+}
+#options ul
+{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#options li
+{
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+#options li a
+{
+  color: White;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.22);
+  font-size: 16pt;
+  text-decoration: none;
+}

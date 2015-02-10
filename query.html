@@ -4,22 +4,31 @@
 <link href="css/query/small_width.css" rel="stylesheet" type="text/css" media="all AND (max-width: 500px)" />
 <link href="css/query/normal_width.css" rel="stylesheet" type="text/css" media="all AND (min-width: 501px)" />  
 
-<div id="menu">
-  <!--
-  <div id="icon" class="item">
-  <img src="img/icon.png" />
-  </div>
-  -->
-  <div id="title" class="item">
-	Web SQL Console
-  </div>
-  <div id="items" class="item">
-    <a href="#/login">
-	  <img src="img/light.png" width="32px"/>
-    </a>
-  </div>
-</div>
 <div ng-controller="query">
+  <div id="menu">
+	<div id="title" class="item">
+	  Web SQL Console
+	</div>
+	<div id="items" class="item">
+	  <a ng-click="options.swing()">
+		<img src="img/light.png" width="32px"/>
+	  </a>
+	</div>
+  </div>
+  <div id="options" ng-show="options.show">
+	<ul>
+	  <li>
+		<a>Save</a>
+	  </li>
+	  <li>
+		<a>Settings</a>
+	  </li>
+	  <li>
+		<a href="#/login">LogOut</a>
+	  </li>
+	</ul>
+  </div>
+
   <form ng-submit="execute()">
     <div id="buttons">
       <input id="execute" type="image" src="img/execute.png" alt="submit" ng-hide="request.sql == '' || executing" />

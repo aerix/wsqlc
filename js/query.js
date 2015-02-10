@@ -15,6 +15,14 @@ function query($scope, $http)
     $scope.executing = false; // Request is now executing?
     $scope.error = new Object();
 	
+	$scope.options = new Object();
+	$scope.options.show = false;
+	$scope.options.swing = function()
+	{
+		$scope.options.show = !$scope.options.show;
+	};
+	
+	
     /** Execute query. */
     $scope.execute = function()
     {
