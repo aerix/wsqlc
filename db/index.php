@@ -36,10 +36,11 @@ if (!$connection->connect_errno != 0)
     try
     {
         $result = $connection->query($sql);
-        if ($result != null)
+        
+        if (!empty($result))
         {
             $rows = array();
-            if($result->num_rows > 0)
+            if(!empty($result->num_rows) && $result->num_rows > 0)
             {
                 while($row = $result->fetch_assoc())
                 {
@@ -49,7 +50,7 @@ if (!$connection->connect_errno != 0)
             }
             else
             {
-            	print('[{"result": "<Empty>"}]');
+            	print('[{"result": "[Empty]"}]');
             }
         }
         else
