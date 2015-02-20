@@ -1,0 +1,25 @@
+#sql
+{
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 30px;
+    border: none;
+    font-family: monospace;
+    font-size: 12pt;
+    /* white-space: nowrap; */
+}
+
+#sql.separately
+{
+  height: 70%;
+}
+
+#sql.full
+{
+  height: 100%;
+}
+
+#sql, #sql:active, #sql:focus 
+{
+    outline:none;
+}

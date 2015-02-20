@@ -1,0 +1,51 @@
+#results
+{
+  margin-top: 5px; 
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: scroll;
+  border-radius: 3px;
+}
+
+#results .content
+{
+    display: table;
+    width: 100%;
+    box-shadow: 1px 1px 1px rgba(220, 220, 220, 0.8);
+}
+
+#results .content ul.header
+{
+  font-weight: bold;
+}
+
+#results .content ul.header li
+{
+  background-color: #cfcfcf;
+}
+
+#results .content ul
+{
+    display: table-row;
+}
+
+#results .content li
+{
+    display: table-cell; 
+    border: 1px solid silver;
+    min-width: 10px;
+    padding: 5px;
+    font-size: 9pt;
+}
+
+#results .buttons
+{
+  padding: 5px;
+}
+
+#results .buttons a
+{
+  color: DarkCyan;
+  font-size: 12pt;
+}
