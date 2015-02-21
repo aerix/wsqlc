@@ -8,9 +8,9 @@ app.config
         '$routeProvider',
         function ($routeProvider)
         {
-            $routeProvider.when('/query', {templateUrl: "query.html"});
+            $routeProvider.when('/query', {templateUrl: "query.html", controller: "query"});
             $routeProvider.when('/login', {templateUrl: "login.html"});
-            $routeProvider.otherwise({templateUrl: "query.html"});
+            $routeProvider.otherwise({templateUrl: "query.html", controller: "query"});
         }
     ]
 );

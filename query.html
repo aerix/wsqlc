@@ -1,66 +1,35 @@
-<link href="css/query/structure.css" rel="stylesheet" type="text/css"/>
-<link href="css/query/menu.css" rel="stylesheet" type="text/css"/>
 <link href="css/query/sql.css" rel="stylesheet" type="text/css"/>
+<link href="css/query/buttons.css" rel="stylesheet" tyoe="text/css"/>
 <link href="css/query/results.css" rel="stylesheet" type="text/css"/>
 <link href="css/query/progress.css" rel="stylesheet" type="text/css"/>
 <link href="css/query/error.css" rel="stylesheet" type="text/css"/>
-  
-<div ng-controller="query">
-  <div id="menu">
-	<div id="title" class="item">
-	  Web SQL Console
-	</div>
-	<div id="items" class="item">
-	  <a ng-click="options.swing()">
-		<img src="img/light.png" width="32px"/>
-	  </a>
-	</div>
-  </div>
-  <div id="options" ng-show="options.show">
-	<ul>
-	  <li>
-		<a>Save</a>
-	  </li>
-	  <li>
-		<a>Settings</a>
-	  </li>
-	  <li>
-		<a href="#/login">LogOut</a>
-	  </li>
-	</ul>
-  </div>
 
-  <form ng-submit="execute()">
-    <div id="buttons">
-      <input id="execute" type="image" src="img/execute.png" alt="submit" ng-hide="request.sql == '' || executing" />
-    </div>
-    <div id="workspace">
-	  <div id="error" ng-show="error.show">
-		{{error.message}}
-	  </div>
-      <textarea id="sql" ng-class="{full: response.data == undefined, separately: response.data != undefined}" ng-model="request.sql" ng-disabled="executing" placeholder="Enter SQL here"></textarea>
-	  <div id="results" ng-show="response.data != undefined">
-		<div class="content">
-          <ul class="header">
-            <li ng-repeat="name in response.header">
-              {{name}}
-            </li>
-          </ul>
-          <ul ng-repeat="row in response.data" >     
-            <li ng-repeat="name in response.header">
-              {{row[name]}}
-            </li>            
-          </ul>     
-		</div>
-		<div class="buttons">
-		  <a href="#">Save</a>
-		</div>
-      </div>
-    </div>
-  </form>
-  <div ng-show="executing" id="progress">
-	<div class="content">
-      <span class="message">Please, wait...</span>
-	</div>
+<div id="error" ng-show="error.show">
+  {{error.message}}
+</div>
+<textarea id="sql" ng-class="{full: response.data == undefined, separately: response.data != undefined}" ng-model="request.sql" ng-disabled="executing" placeholder="Enter SQL here"></textarea>
+<div id="results" ng-show="response.data != undefined">
+  <div class="content">
+    <ul class="header">
+      <li ng-repeat="name in response.header">
+        {{name}}
+      </li>
+    </ul>
+    <ul ng-repeat="row in response.data" >     
+      <li ng-repeat="name in response.header">
+        {{row[name]}}
+      </li>            
+    </ul>     
   </div>
+  <div class="buttons">
+    <a href="#">Save</a>
+  </div>
+</div>
+<div ng-show="executing" id="progress">
+  <div class="content">
+    <span class="message">Please, wait...</span>
+  </div>
+</div>
+<div id="buttons">
+  <input id="execute" type="image" src="img/execute.png" ng-click="execute()" ng-hide="request.sql == '' || executing" />
 </div>

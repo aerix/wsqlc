@@ -1,18 +1,40 @@
 <!doctype html>
 <html>
-<head> 
+  <head> 
     <title>SQL console</title>
     <meta name="HandheldFriendly" content="True"/>
     <meta name="Viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/workspace.css" rel="stylesheet" type="text/css"/>
+    <link href="css/menu.css" rel="stylesheet" type="text/css"/>
     <script src="js/angular.min.js" type="text/javascript"></script>
     <script src="js/angular-route.min.js" type="text/javascript"></script>
     <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/menu.js" type="text/javascript"></script>
     <script src="js/query.js" type="text/javascript"></script>
     <script src="js/login.js" type="text/javascript"></script>
-</head>
-<body ng-app="sqlConsole">
-  <div ng-view>
-  </div>
-</body>
+  </head>
+  <body ng-app="sqlConsole">
+    <div ng-controller="menu">
+      <div id="menu">
+        <div id="title" class="item">
+          Web SQL Console
+        </div>
+        <div id="items" class="item">
+          <a ng-click="options.swing()">
+            <img src="img/light.png" width="32px"/>
+          </a>
+        </div>
+      </div>
+      <div id="options" ng-show="options.show">
+        <ul>
+          <li>
+            <a href="#/login">LogOut</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="workspace" ng-view>
+    </div>
+  </body>
 </html>
