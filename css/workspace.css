@@ -6,4 +6,11 @@
 	bottom: 5px;
 	left: 5px;
 	right: 5px;
+    padding: 5px;
+    background-color: White;
+    box-shadow: 
+                inset  2px  2px 3px gray,
+                      -1px -1px 1px black;
+    border-radius: 2px;
+    overflow: scroll;
 }

@@ -11,7 +11,7 @@
   background: -moz-linear-gradient(#56585D, #2F3034);
   background: linear-gradient(#56585D, #2F3034);
   border-bottom: 1px solid #000;
-  box-shadow: 0px 2px 2px silver;
+  box-shadow: 0px 1px 2px rgb(100, 100, 100);
 }
 
 #menu .item
@@ -47,12 +47,14 @@
 {
   position: absolute;
   z-index: 2;
-  top: 45px;
-  right: 2px;
+  top: 47px;
+  bottom: 0px;
+  right: 0px;
   padding-top: 10px
   padding-bottom: 10px;
-  background-color: #555555;
-  box-shadow: 1px 1px 1px Gray;
+  background-color: #2F3034;
+  box-shadow: -2px 0px 2px Gray;
+  border-left: 1px solid Black;
   color: Silver;
 }
 
