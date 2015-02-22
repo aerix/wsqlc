@@ -7,6 +7,8 @@
     <link href="css/main.css" rel="stylesheet" type="text/css"/>
     <link href="css/workspace.css" rel="stylesheet" type="text/css"/>
     <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+    <link href="css/menu/options/small.css" rel="stylesheet" text="text/css" media="all AND (max-width: 800px)"/>
+    <link href="css/menu/options/big.css" rel="stylesheet" text="text/css" media="all AND (min-width: 801px)"/>
     <script src="js/angular.min.js" type="text/javascript"></script>
     <script src="js/angular-route.min.js" type="text/javascript"></script>
     <script src="js/app.js" type="text/javascript"></script>
@@ -15,19 +17,13 @@
     <script src="js/login.js" type="text/javascript"></script>
   </head>
   <body ng-app="sqlConsole">
-    <div ng-controller="menu">
-      <div id="menu">
-        <div id="title" class="item">
-          Web SQL Console
-        </div>
-        <div id="items" class="item">
-          <a ng-click="options.swing()">
-            <img src="img/light.png" width="32px"/>
-          </a>
-        </div>
-      </div>
-      <div id="options" ng-show="options.show">
-        <ul>
+
+    <div id="menu" ng-controller="menu">
+      <span id="title" class="cell">
+        Web SQL Console
+      </span>
+      
+        <ul id="options" class="cell" ng-class="{visible: options.show, hidden: !options.show}">
           <li ng-repeat="point in points">
             <a href="#/{{point.id}}">{{point.name}}</a>
           </li>
@@ -35,7 +31,9 @@
             <a href="#/login">LogOut</a>
           </li>
         </ul>
-      </div>
+      <a id="swing" class="cell" ng-click="options.swing()">
+          <img src="img/light.png" width="32px"/>
+        </a>
     </div>
     <div id="workspace" ng-view>
     </div>

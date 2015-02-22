@@ -14,12 +14,6 @@
   box-shadow: 0px 1px 2px rgb(100, 100, 100);
 }
 
-#menu .item
-{
-  vertical-align: middle;
-  display: table-cell;
-}
-
 #icon
 {
   padding-left: 5px;
@@ -27,52 +21,23 @@
 
 #title
 {
-  color: white;
   text-align: left;
-  font-weight: bold;
   padding-left: 10px;
-  width: 100%;  
+  width: 100%;
+  color: white;
+  font-weight: bold;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.22);
 }
 
-#items
+#menu .cell
 {
   padding-right: 10px;
   padding-left: 10px;
-  text-align: right;
   border-left: 1px Solid Black;
 }
-
-#options
+#menu .cell
 {
-  position: absolute;
-  z-index: 2;
-  top: 45px;
-  right: 0px;
-  padding-top: 10px
-  padding-bottom: 10px;
-  background-color: #2F3034;
-  box-shadow: -1px 2px 2px Gray;
-  border: 1px solid Black;
-  color: Silver;
+  display: table-cell;
+  vertical-align: middle;
 }
 
-#options ul
-{
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-#options li
-{
-  padding-top: 7px;
-  padding-bottom: 7px;
-}
-
-#options li a
-{
-  color: White;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.22);
-  font-size: 16pt;
-  text-decoration: none;
-}
