@@ -1,6 +1,6 @@
 'use strict';
 
-function menu($scope)
+function menu($scope, $http)
 {
     $scope.options = new Object();
     $scope.options.show = false;
@@ -8,4 +8,19 @@ function menu($scope)
     {
         $scope.options.show = !$scope.options.show;
 	};
+
+    $http.get("menu.json", {user:""}).success
+    (
+        function(response)
+        {
+            $scope.points = response;
+        }
+    ).
+    error
+    (
+        function(message, status)
+        {
+            alert("Error: " + message);
+        }
+    );
 }

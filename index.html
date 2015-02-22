@@ -28,11 +28,8 @@
       </div>
       <div id="options" ng-show="options.show">
         <ul>
-          <li>
-            <a href="#/query">Query</a>
-          </li>
-          <li>
-            <a href="#/about">About</a>
+          <li ng-repeat="point in points">
+            <a href="#/{{point.id}}">{{point.name}}</a>
           </li>
           <li>
             <a href="#/login">LogOut</a>

@@ -47,12 +47,12 @@
 {
   position: absolute;
   z-index: 2;
-  top: 47px;
+  top: 45px;
   right: 0px;
   padding-top: 10px
   padding-bottom: 10px;
   background-color: #2F3034;
-  box-shadow: -2px 2px 2px Gray;
+  box-shadow: -1px 2px 2px Gray;
   border: 1px solid Black;
   color: Silver;
 }
