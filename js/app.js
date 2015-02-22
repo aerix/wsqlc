@@ -10,6 +10,7 @@ app.config
         {
             $routeProvider.when('/query', {templateUrl: "query.html", controller: "query"});
             $routeProvider.when('/login', {templateUrl: "login.html"});
+            $routeProvider.when('/about', {templateUrl: "about.html"});
             $routeProvider.otherwise({templateUrl: "query.html", controller: "query"});
         }
     ]
