@@ -48,13 +48,12 @@
   position: absolute;
   z-index: 2;
   top: 47px;
-  bottom: 0px;
   right: 0px;
   padding-top: 10px
   padding-bottom: 10px;
   background-color: #2F3034;
-  box-shadow: -2px 0px 2px Gray;
-  border-left: 1px solid Black;
+  box-shadow: -2px 2px 2px Gray;
+  border: 1px solid Black;
   color: Silver;
 }
 
