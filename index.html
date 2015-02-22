@@ -22,18 +22,17 @@
       <span id="title">
         Web SQL Console
       </span>
-      
-        <ul id="options" class="cell" ng-class="{visible: options.show, hidden: !options.show}">
-          <li ng-repeat="point in points">
-            <a href="#/{{point.id}}">{{point.name}}</a>
-          </li>
-          <li>
-            <a href="#/login">LogOut</a>
-          </li>
-        </ul>
+	  <ul id="items" class="cell" ng-class="{visible: options.show, hidden: !options.show}">
+		<li ng-repeat="point in points">
+		  <a href="#/{{point.id}}">{{point.name}}</a>
+		</li>
+		<li>
+		  <a href="#/login">LogOut</a>
+		</li>
+	  </ul>
       <a id="swing" class="cell" ng-click="options.swing()">
-          <img src="img/light.png" width="32px"/>
-        </a>
+		<img src="img/light.png" width="32px"/>
+	  </a>
     </div>
     <div id="workspace" ng-view>
     </div>

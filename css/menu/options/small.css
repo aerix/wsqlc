@@ -1,4 +1,4 @@
-#options
+#items
 {
   position: absolute;
   z-index: 2;
@@ -11,13 +11,13 @@
   box-shadow: -1px 2px 2px Gray;
 }
 
-#options li
+#items li
 {
   padding: 10px;
   list-style-type: none;
 }
 
-#options li a
+#items li a
 {
   color: White;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.22);
@@ -25,11 +25,11 @@
   text-decoration: none;
 }
 
-#options.visible
+#items.visible
 {
   visibility: visible;
 }
-#options.hidden
+#items.hidden
 {
    visibility: hidden;
 }
