@@ -1,18 +1,7 @@
-#results
-{
-  margin-top: 5px; 
-  margin-bottom: 15px;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: scroll;
-  border-radius: 3px;
-}
-
 #results .content
 {
     display: table;
     width: 100%;
-    box-shadow: 1px 1px 1px rgba(220, 220, 220, 0.8);
 }
 
 #results .content ul.header
@@ -23,6 +12,7 @@
 #results .content ul.header li
 {
   background-color: #cfcfcf;
+  padding: 10px;
 }
 
 #results .content ul
@@ -33,7 +23,7 @@
 #results .content li
 {
     display: table-cell; 
-    border: 1px solid silver;
+    border: 1px solid #ececec;
     min-width: 10px;
     padding: 5px;
     font-size: 9pt;
@@ -41,11 +31,5 @@
 
 #results .buttons
 {
-  padding: 5px;
-}
-
-#results .buttons a
-{
-  color: DarkCyan;
-  font-size: 12pt;
+  padding: 10px;
 }

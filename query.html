@@ -1,35 +1,51 @@
 <link href="css/query/sql.css" rel="stylesheet" type="text/css"/>
-<link href="css/query/buttons.css?v=1" rel="stylesheet" tyoe="text/css"/>
+<link href="css/query/buttons.css" rel="stylesheet" tyoe="text/css"/>
 <link href="css/query/results.css" rel="stylesheet" type="text/css"/>
-<link href="css/query/progress.css" rel="stylesheet" type="text/css"/>
-<link href="css/query/error.css" rel="stylesheet" type="text/css"/>
 
-<div id="error" ng-show="error.show">
-  {{error.message}}
-</div>
-<textarea id="sql" ng-class="{full: response.data == undefined, separately: response.data != undefined}" ng-model="request.sql" ng-disabled="executing" placeholder="Enter SQL here"></textarea>
-<div id="results" ng-show="response.data != undefined">
-  <div class="content">
-    <ul class="header">
-      <li ng-repeat="name in response.header">
-        {{name}}
-      </li>
-    </ul>
-    <ul ng-repeat="row in response.data" >     
-      <li ng-repeat="name in response.header">
-        {{row[name]}}
-      </li>            
-    </ul>     
-  </div>
-  <div class="buttons">
-    <a href="#">Save</a>
-  </div>
-</div>
-<div ng-show="executing" id="progress">
-  <div class="content">
-    <span class="message">Please, wait...</span>
-  </div>
-</div>
+<md-card ng-show="error.show">
+  <md-toolbar class="md-warn">
+	<div class="md-toolbar-tools">
+	  <span class="md-flex">Error</span>
+	</div>
+  </md-toolbar>
+  <md-content class="md-padding">
+	{{error.message}}
+  </md-content>
+</md-card>
+
+<md-input-container flex>
+  <label>SQL</label>
+  <textarea id="sql" ng-model="request.sql" ng-disabled="executing"></textarea>
+</md-input-container>
+
+<md-content class="md-padding" ng-show="executing">
+  Executing...
+  <md-progress-linear md-mode="indeterminate"></md-progress-linear>  
+</md-content>
+
+<md-content id="results" ng-show="response.data != undefined">
+	<div class="content">
+	  <ul class="header">
+		<li ng-repeat="name in response.header">
+		  {{name}}
+		</li>
+	  </ul>
+	  <ul ng-repeat="row in response.data" >     
+		<li ng-repeat="name in response.header">
+		  {{row[name]}}
+		</li>            
+	  </ul>     
+	</div>
+	<div class="buttons">
+	  <md-button class="md-raised">Export</md-button>
+	</div>
+  </md-content>
+
 <div id="buttons">
-  <input id="execute" type="image" src="img/execute.png" ng-click="execute()" ng-hide="request.sql == '' || executing" />
+  <md-button id="execute" class="md-fab" aria-label="Execute" ng-click="execute()" ng-hide="request.sql == '' || executing">
+  <md-tooltip>
+    Execute SQL
+  </md-tooltip>
+  <b>Exec</b>
+  </md-button>
 </div>
