@@ -1,25 +1,12 @@
-(function()
-{     
-  'use strict';
-  
-  angular
-       .module('query', [ 'ngMaterial' ])  
-       .controller('queryController', [
-          '$scope', '$http',
-          queryController
-       ]);
-
-	/**
-	 * Query controller.
-	 */	
-	function queryController($scope, $http)
+angular.module('query', [ 'ngCookies' ]).
+controller
+(
+	'queryController',
+	function($scope, $http, $cookieStore)
 	{    
 		$scope.request = new Object();
-		$scope.request.server = "localhost";
-		$scope.request.user = "root";
-		// $scope.request.password = "";
-		// $scope.database = "";
-		$scope.request.sql = "";
+		$scope.request = $cookieStore.get("credentials");
+		$scope.request.sql = ""; // Add property.
 
 		$scope.executing = false; // Request is now executing?
 		$scope.error = new Object();
@@ -34,7 +21,7 @@
 
 			// Send.
 			$http.post("db/", $scope.request)
-				.success
+			.success
 			(
 				function(response)
 				{
@@ -49,7 +36,7 @@
 					$scope.executing = false;
 				}
 			)
-				.error
+			.error
 			(
 				function (message, status)
 				{
@@ -61,6 +48,4 @@
 			);    
 		};
 	}
-	  
-})();
-
+);

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('wsqlc', ['ngRoute', 'ngMaterial', 'menu', 'query', 'wsqlc-settings']);
+var app = angular.module('wsqlc', ['ngRoute', 'ngCookies', 'ngMaterial', 'menu', 'query', 'wsqlc-settings', 'wsqlc-login']);
           
 app.config(function($mdThemingProvider, $mdIconProvider){
 
@@ -14,18 +14,35 @@ app.config(function($mdThemingProvider, $mdIconProvider){
 		  .accentPalette('amber');
 });
 
+var checkRouting = function ($q, $location, $cookieStore)
+{
+    if ($cookieStore.get("credentials") != undefined && $cookieStore.get("credentials").version == 1)
+    {
+        return true;
+    }
+    else
+    {
+        var defered = $q.defer();
+        // defered.resolve(true);
+        defered.reject();
+        $location.path("/login");
+        return defered.promise;;
+    }
+};
+
+
 app.config
 (
     [
         '$routeProvider',
         function ($routeProvider)
         {
-			$routeProvider.when('/login', {templateUrl: "login.html"});
-            $routeProvider.when('/query', {templateUrl: "query.html", controller: "queryController"});           
+			$routeProvider.when('/login', {templateUrl: "login.html", controller: "loginController"});
+            $routeProvider.when('/query', {templateUrl: "query.html", controller: "queryController", resolve: { factory: checkRouting }});           
             $routeProvider.when('/about', {templateUrl: "about.html"});
 			$routeProvider.when('/settings', {templateUrl: "settings.html"});
 			$routeProvider.when('/documentation', {templateUrl: "documentation.html"});
-            $routeProvider.otherwise({templateUrl: "query.html", controller: "queryController"});
+            $routeProvider.otherwise({templateUrl: "query.html", controller: "queryController", resolve: { factory: checkRouting }});
         }
     ]
 );
