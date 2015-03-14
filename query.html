@@ -26,12 +26,12 @@
 <md-content id="results" ng-show="response.data != undefined">
 	<div class="content">
 	  <ul class="header">
-		<li ng-repeat="name in response.header">
+		<li ng-repeat="name in response.header" bind-once>
 		  {{name}}
 		</li>
 	  </ul>
-	  <ul ng-repeat="row in response.data" >     
-		<li ng-repeat="name in response.header">
+	  <ul ng-repeat="row in response.data" bind-once>     
+		<li ng-repeat="name in response.header" bind-once>
 		  {{row[name]}}
 		</li>            
 	  </ul>     
