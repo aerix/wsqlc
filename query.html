@@ -27,12 +27,12 @@
 	<div class="content">
 	  <ul class="header">
 		<li ng-repeat="name in response.header" bind-once>
-		  {{name}}
+		  {{::name}}
 		</li>
 	  </ul>
-	  <ul ng-repeat="row in response.data" bind-once>     
-		<li ng-repeat="name in response.header" bind-once>
-		  {{row[name]}}
+	  <ul ng-repeat="row in response.data">     
+		<li ng-repeat="name in response.header">
+		  {{::row[name]}}
 		</li>            
 	  </ul>     
 	</div>
