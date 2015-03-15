@@ -4,7 +4,7 @@
     <title>WSQL</title>
 
 	<link rel="shortcut icon" href="img/icon.png">
-	
+
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -16,45 +16,51 @@
 
   <body ng-app="wsqlc" layout="row" ng-controller="MenuListController as ul">
 
-   <md-sidenav md-is-locked-open="$media('gt-sm')" class="md-whiteframe-z2" md-component-id="left">	
-		<md-toolbar layout="row">  
-		 <div class="md-toolbar-tools docs-panel" layout="row">
-			  <div layout="row" class="docs-panel-logotype">
-				  <img src="img/icon.png" />
-				  <div class="docs-logotype">Web SQL Console</div>
-			  </div>
-			  <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Close Menu">
-				<md-icon md-svg-icon="close" ></md-icon>
-			  </md-button>
+	<md-sidenav md-is-locked-open="$media('gt-sm')" class="md-whiteframe-z2" md-component-id="left">	
+	  <md-toolbar layout="row">  
+		<div class="md-toolbar-tools docs-panel" layout="row">
+		  <div layout="row" class="docs-panel-logotype">
+			<img src="img/icon.png" />
+			<div class="docs-logotype">Web SQL Console</div>
+		  </div>
+		  <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Close Menu">
+			<md-icon md-svg-icon="close" ></md-icon>
+		  </md-button>
 		</div>
-		</md-toolbar>
-		<md-list>
-			<md-item ng-repeat="it in ul.menu">
-				<md-button ng-click="ul.selectMenu(it)" ng-class="{'selected' : it === ul.selected }">
-				  <md-icon md-svg-icon="{{it.icon}}" class="icon"></md-icon>
-				  {{it.name}}
-				</md-button>
-			</md-item>
-		</md-list>
+	  </md-toolbar>
+	  <md-list>
+		<md-item ng-repeat="it in ul.menu">
+		  <md-button ng-click="ul.selectMenu(it)" ng-class="{'selected' : it === ul.selected }">
+			<md-icon md-svg-icon="{{it.icon}}" class="icon"></md-icon>
+			{{it.name}}
+		  </md-button>
+		</md-item>
+		<md-item>
+		  <md-button href="login">
+			<md-icon md-svg-icon="svg-5" class="icon"></md-icon>
+			LogOut
+		  </md-button>
+		</md-item>
+	  </md-list>
 	</md-sidenav>
-   
-	<div flex layout="column">
-	 
-		<md-toolbar layout="row">
-		  <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show Menu">
-			<md-icon md-svg-icon="menu" ></md-icon>
-		  </md-button>
-		  <h1>{{ul.selected.name}}</h1>
-		  <md-button class="menu" ng-click="ul.toggleList()" aria-label="Popup">
-			<md-icon md-svg-icon="popup" ></md-icon>
-		  </md-button>
-		</md-toolbar>
 
-        <md-content flex id="content">
-		  <div ng-view>
-		  </div>		  
-        </md-content>
-		
+	<div flex layout="column">
+
+	  <md-toolbar layout="row">
+		<md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show Menu">
+		  <md-icon md-svg-icon="menu" ></md-icon>
+		</md-button>
+		<h1>{{ul.selected.name}}</h1>
+		<md-button class="menu" ng-click="ul.toggleList()" aria-label="Popup">
+		  <md-icon md-svg-icon="popup" ></md-icon>
+		</md-button>
+	  </md-toolbar>
+
+	  <md-content flex id="content">
+		<div ng-view>
+		</div>		  
+	  </md-content>
+
     </div>
 
     <script src="js/angular.min.js"></script>
@@ -63,7 +69,7 @@
     <script src="js/angular-animate.min.js"></script>
     <script src="js/angular-aria.min.js"></script>
     <script src="js/angular-material.min.js"></script>
-    
+
 	<script src="./js/credentials.js"></script>
 	<script src="./js/loginController.js"></script>
     <script src="./js/menu/Menu.js"></script>

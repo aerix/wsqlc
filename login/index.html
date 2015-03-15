@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Web SQL Console</title>
+
+	<link rel="shortcut icon" href="../img/icon.png">
+
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+	<link rel='stylesheet' href='../css/fonts/roboto.css'>
+    <link rel="stylesheet" href="../css/angular-material.min.css">
+	<link rel="stylesheet" href="styles.css" />
+  </head>
+  <body ng-app="wsqlc.login" ng-controller="loginController">
+	<h1>Web SQL Console</h1>
+	<md-input-container flex>
+	  <label>User</label>
+	  <input required ng-model="credentials.user" />
+	</md-input-container>
+
+	<md-input-container flex>
+	  <label>Password</label>
+	  <input ng-model="credentials.password" type="password" />
+	</md-input-container>
+
+	<md-input-container flex>
+	  <label>Server</label>
+	  <input ng-model="credentials.server" />
+	</md-input-container>
+
+	<md-input-container flex>
+	  <label>Database</label>
+	  <input ng-model="credentials.database" />
+	</md-input-container>
+
+	<div class="buttons">
+	  <md-button class="md-raised button" ng-click="enter()" ng-disabled="credentials.user == undefined">Login</md-button>
+	</div>
+
+	<script src="../js/angular.min.js"></script>
+	<script src="../js/angular-cookies.min.js"></script>
+	<script src="../js/angular-animate.min.js"></script>
+    <script src="../js/angular-aria.min.js"></script>
+    <script src="../js/angular-material.min.js"></script>
+
+	<script src="../js/credentials.js"></script>
+	<script src="controller.js"></script>
+	<script src="module.js"></script>
+  </body>
+</html>

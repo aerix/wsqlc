@@ -1,0 +1,19 @@
+body
+{
+  margin: 20px;
+}
+
+h1
+{
+  color: DarkGray;
+}
+
+.buttons
+{
+  text-align: center;
+}
+
+.button
+{
+  padding: 15px;
+}
